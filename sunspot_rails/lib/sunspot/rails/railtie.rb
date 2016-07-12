@@ -26,16 +26,10 @@ module Sunspot
       rake_tasks do
         load 'sunspot/rails/tasks.rb'
       end
-      
+
       generators do
         load "generators/sunspot_rails.rb"
       end
-      
-      # When loading console, make it output to STDERR.
-      console do
-        Sunspot::Rails::LogSubscriber.logger = Logger.new(STDERR)
-      end
-
     end
   end
 end
